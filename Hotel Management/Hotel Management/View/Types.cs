@@ -20,6 +20,7 @@ namespace Hotel_Management
         }
 
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pedro\Documents\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
+        int key = 0;
 
         private void Populate()
         {
@@ -55,9 +56,10 @@ namespace Hotel_Management
                     sqlCommand.Parameters.AddWithValue("@TC", CostTb.Text);
                     sqlCommand.ExecuteNonQuery();
 
-                    MessageBox.Show("completed");
+                    MessageBox.Show("category inserted");
 
                     conn.Close();
+                    Populate();
                 }
                 catch (Exception ex)
                 {
@@ -67,9 +69,117 @@ namespace Hotel_Management
 
         }
 
+
+        private void EditCategorie()
+        {
+            if (TypeNameTb.Text == "" || CostTb.Text == "")
+            {
+                MessageBox.Show("Missing information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("update TypeTbl set TypeName=@TN,TypeCost=@TC where TypeNum=@TKey", conn);
+
+                    sqlCommand.Parameters.AddWithValue("@TN", TypeNameTb.Text);
+                    sqlCommand.Parameters.AddWithValue("@TC", CostTb.Text);
+                    sqlCommand.Parameters.AddWithValue("@TKey", key);
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Category updated");
+
+                    conn.Close();
+                    Populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+
+        private void DeleteCategorie()
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Select a category!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("delete from TypeTbl where TypeNum=@TKey", conn);
+                    sqlCommand.Parameters.AddWithValue("@TKey", key);
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Room Deleted!");
+
+                    conn.Close();
+                    Populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Rooms form = new Rooms();
+            form.Show();
+            this.Hide();
+        }
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             InsertCategories();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            EditCategorie();
+        }
+
+        private void TypesDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TypeNameTb.Text = TypesDGV.SelectedRows[0].Cells[1].Value.ToString();
+            CostTb.Text = TypesDGV.SelectedRows[0].Cells[2].Value.ToString();
+
+            if (TypeNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(TypesDGV.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteCategorie();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Users form = new Users();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Customers form = new Customers();
+            form.Show();
+            this.Hide();
         }
     }
 }

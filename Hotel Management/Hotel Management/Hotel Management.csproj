@@ -94,11 +94,11 @@
     <Compile Include="View\Types.Designer.cs">
       <DependentUpon>Types.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Utils.cs">
+    <Compile Include="View\Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Utils.Designer.cs">
-      <DependentUpon>Utils.cs</DependentUpon>
+    <Compile Include="View\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\Bookings.resx">
       <DependentUpon>Bookings.cs</DependentUpon>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="View\Types.resx">
       <DependentUpon>Types.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Utils.resx">
-      <DependentUpon>Utils.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
