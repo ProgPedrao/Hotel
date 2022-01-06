@@ -124,7 +124,7 @@ namespace Hotel_Management
                 }
                 catch (Exception ex)
                 {
-                    
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

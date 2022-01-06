@@ -89,21 +89,128 @@ namespace Hotel_Management
 
         private void BookBtn_Click(object sender, EventArgs e)
         {
+            if (CustomerCb.SelectedIndex == -1 || RoomCb.SelectedIndex == -1 || AmountTb.Text == "")
+            {
+                MessageBox.Show("missing information!");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand sqlCommand = new SqlCommand("insert into BookingTbl(Room,Customer,BookDate,Duration,Cost) values(@BR,@BC,@BBD,@BD,@BCost)");
+                    sqlCommand.Connection = conn;
 
+                    sqlCommand.Parameters.AddWithValue("@BR", RoomCb.SelectedValue.ToString());
+                    sqlCommand.Parameters.AddWithValue("@BC", CustomerCb.SelectedValue.ToString());
+                    sqlCommand.Parameters.AddWithValue("@BBD", BDate.Value.Date);
+                    sqlCommand.Parameters.AddWithValue("@BD", DurationTb.Text);
+                    sqlCommand.Parameters.AddWithValue("@BCost", AmountTb.Text.Replace("R$", ""));
+
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Booking Added!!!");
+                    conn.Close();
+                    Populate();
+                    setBooked();
+                    GetRooms();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
+            CancelBooking();
+            setAvailable();
+        }
 
+        private void CancelBooking()
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Select a category!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("delete from BookingTbl where BookNum=@BKey", conn);
+                    sqlCommand.Parameters.AddWithValue("@BKey", key);
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Customer Deleted!");
+
+                    conn.Close();
+                    Populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void setBooked()
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("update RoomTbl set RStatus=@RS where RNum=@RKey", conn);
+
+                sqlCommand.Parameters.AddWithValue("@RS", "Booked");
+                sqlCommand.Parameters.AddWithValue("@RKey", RoomCb.SelectedValue.ToString());
+
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Room Updated!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conn.Close();
+
+                Populate();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void setAvailable()
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("update RoomTbl set RStatus=@RS where RNum=@RKey", conn);
+
+                sqlCommand.Parameters.AddWithValue("@RS", "Available");
+                sqlCommand.Parameters.AddWithValue("@RKey", RoomCb.Text);
+
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Room Updated!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conn.Close();
+
+                Populate();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BookingsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             RoomCb.Text = BookingsDGV.SelectedRows[0].Cells[1].Value.ToString();
             CustomerCb.Text = BookingsDGV.SelectedRows[0].Cells[2].Value.ToString();
-            DurationTb.Text = BookingsDGV.SelectedRows[0].Cells[3].Value.ToString();
-            AmountTb.Text = BookingsDGV.SelectedRows[0].Cells[4].Value.ToString();
-            BDate.Text = BookingsDGV.SelectedRows[0].Cells[5].Value.ToString();
+            BDate.Text = BookingsDGV.SelectedRows[0].Cells[3].Value.ToString();
+            DurationTb.Text = BookingsDGV.SelectedRows[0].Cells[4].Value.ToString();
+            AmountTb.Text = BookingsDGV.SelectedRows[0].Cells[5].Value.ToString();
 
             if (DurationTb.Text == "")
             {
@@ -132,13 +239,20 @@ namespace Hotel_Management
                 catch (Exception ex)
                 {
 
-                    throw;
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
             {
-                AmountTb.Text = "R$ 0";
+                AmountTb.Text = "";
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Rooms form = new Rooms();
+            form.Show();
+            this.Hide();
         }
     }
 }
