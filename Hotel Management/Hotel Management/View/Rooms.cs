@@ -21,7 +21,7 @@ namespace Hotel_Management
             GetCategories();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pedro\Documents\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Environment.CurrentDirectory + @"\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
         int key = 0;
 
         private void Populate()
@@ -152,7 +152,7 @@ namespace Hotel_Management
 
                     Populate();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

@@ -22,7 +22,7 @@ namespace Hotel_Management.View
             GetCustomers();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pedro\Documents\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory + @"\HotelDbase.mdf ;Integrated Security=True;Connect Timeout=30");
 
         private void CountRooms()
         {

@@ -20,7 +20,7 @@ namespace Hotel_Management
             Populate();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pedro\Documents\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory + @"\HotelDbase.mdf;Integrated Security=True;Connect Timeout=30");
         int key = 0;
 
         private void Populate()
