@@ -138,6 +138,7 @@ namespace Hotel_Management
             this.label7.Size = new System.Drawing.Size(125, 29);
             this.label7.TabIndex = 11;
             this.label7.Text = "Dashboard";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox6
             // 
@@ -271,6 +272,7 @@ namespace Hotel_Management
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(260, 54);
             this.panel3.TabIndex = 1;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // pictureBox1
             // 

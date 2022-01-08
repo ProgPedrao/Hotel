@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel_Management.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -251,6 +252,41 @@ namespace Hotel_Management
         private void label2_Click(object sender, EventArgs e)
         {
             Rooms form = new Rooms();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Types form = new Types();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Users form = new Users();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Customers form = new Customers();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Dashboard form = new Dashboard();
+            form.Show();
+            this.Hide();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
             form.Show();
             this.Hide();
         }

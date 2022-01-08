@@ -98,6 +98,7 @@ namespace Hotel_Management
             this.label2.Size = new System.Drawing.Size(84, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Rooms";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel4
             // 
@@ -141,6 +142,7 @@ namespace Hotel_Management
             this.label3.Size = new System.Drawing.Size(122, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Categories";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -297,6 +299,7 @@ namespace Hotel_Management
             this.label7.Size = new System.Drawing.Size(125, 29);
             this.label7.TabIndex = 11;
             this.label7.Text = "Dashboard";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox5
             // 
@@ -319,6 +322,7 @@ namespace Hotel_Management
             this.label5.Size = new System.Drawing.Size(106, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Bookings";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox4
             // 
@@ -341,6 +345,7 @@ namespace Hotel_Management
             this.label4.Size = new System.Drawing.Size(68, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Users";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel3
             // 
@@ -351,6 +356,7 @@ namespace Hotel_Management
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(260, 54);
             this.panel3.TabIndex = 1;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // pictureBox1
             // 
@@ -833,6 +839,7 @@ namespace Hotel_Management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Customers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customers";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Hotel_Management.View;
 
 namespace Hotel_Management
 {
@@ -201,6 +202,20 @@ namespace Hotel_Management
         private void label5_Click(object sender, EventArgs e)
         {
             Bookings form = new Bookings();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Dashboard form = new Dashboard();
+            form.Show();
+            this.Hide();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
             form.Show();
             this.Hide();
         }
