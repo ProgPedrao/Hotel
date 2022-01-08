@@ -70,15 +70,6 @@ namespace Hotel_Management.View
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BDate = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -95,8 +86,6 @@ namespace Hotel_Management.View
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -104,7 +93,7 @@ namespace Hotel_Management.View
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(514, 9);
+            this.label9.Location = new System.Drawing.Point(509, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 29);
             this.label9.TabIndex = 14;
@@ -116,7 +105,6 @@ namespace Hotel_Management.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.BDate);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
@@ -346,10 +334,11 @@ namespace Hotel_Management.View
             // 
             // CustomerCb
             // 
+            this.CustomerCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerCb.FormattingEnabled = true;
-            this.CustomerCb.Location = new System.Drawing.Point(631, 200);
+            this.CustomerCb.Location = new System.Drawing.Point(637, 307);
             this.CustomerCb.Name = "CustomerCb";
-            this.CustomerCb.Size = new System.Drawing.Size(121, 21);
+            this.CustomerCb.Size = new System.Drawing.Size(124, 32);
             this.CustomerCb.TabIndex = 17;
             this.CustomerCb.Text = "Customer";
             this.CustomerCb.SelectionChangeCommitted += new System.EventHandler(this.CustomerCb_SelectionChangeCommitted);
@@ -359,7 +348,7 @@ namespace Hotel_Management.View
             this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel5.Controls.Add(this.RoomLbl);
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(221, 100);
+            this.panel5.Location = new System.Drawing.Point(144, 207);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 18;
@@ -369,7 +358,7 @@ namespace Hotel_Management.View
             this.panel6.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel6.Controls.Add(this.BookingLbl);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(783, 100);
+            this.panel6.Location = new System.Drawing.Point(850, 207);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 100);
             this.panel6.TabIndex = 19;
@@ -379,7 +368,7 @@ namespace Hotel_Management.View
             this.panel7.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel7.Controls.Add(this.CustLbl);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(502, 62);
+            this.panel7.Location = new System.Drawing.Point(497, 112);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 100);
             this.panel7.TabIndex = 19;
@@ -455,7 +444,7 @@ namespace Hotel_Management.View
             this.panel8.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel8.Controls.Add(this.DIncomeLbl);
             this.panel8.Controls.Add(this.label15);
-            this.panel8.Location = new System.Drawing.Point(359, 251);
+            this.panel8.Location = new System.Drawing.Point(354, 406);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 26;
@@ -487,7 +476,7 @@ namespace Hotel_Management.View
             this.panel9.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel9.Controls.Add(this.IncomeCustomerLbl);
             this.panel9.Controls.Add(this.label19);
-            this.panel9.Location = new System.Drawing.Point(644, 251);
+            this.panel9.Location = new System.Drawing.Point(639, 406);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 100);
             this.panel9.TabIndex = 26;
@@ -526,120 +515,14 @@ namespace Hotel_Management.View
             // 
             // BDate
             // 
+            this.BDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BDate.Location = new System.Drawing.Point(486, 200);
+            this.BDate.Location = new System.Drawing.Point(433, 307);
             this.BDate.Name = "BDate";
-            this.BDate.Size = new System.Drawing.Size(134, 20);
+            this.BDate.Size = new System.Drawing.Size(180, 29);
             this.BDate.TabIndex = 27;
             this.BDate.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
             this.BDate.ValueChanged += new System.EventHandler(this.BDate_ValueChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(30, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(228, 29);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Management System";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(88, 175);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(183, 29);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "Manage Finance";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(88, 134);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(238, 29);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "Manage Receptionists";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(88, 93);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(197, 29);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Manage Bookings";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(88, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(175, 29);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "Manage Rooms";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel10.Controls.Add(this.label20);
-            this.panel10.Controls.Add(this.label21);
-            this.panel10.Location = new System.Drawing.Point(658, 10);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(522, 197);
-            this.panel10.TabIndex = 27;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(-3, 41);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(42, 29);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "R$";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label21.Location = new System.Drawing.Point(-3, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 29);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "Customers";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel11.Controls.Add(this.panel10);
-            this.panel11.Controls.Add(this.label14);
-            this.panel11.Controls.Add(this.label18);
-            this.panel11.Controls.Add(this.label13);
-            this.panel11.Controls.Add(this.label16);
-            this.panel11.Controls.Add(this.label17);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 357);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1195, 217);
-            this.panel11.TabIndex = 33;
             // 
             // Dashboard
             // 
@@ -677,10 +560,6 @@ namespace Hotel_Management.View
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -725,14 +604,5 @@ namespace Hotel_Management.View
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.DateTimePicker BDate;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
     }
 }
